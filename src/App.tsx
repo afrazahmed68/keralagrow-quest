@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Quests from "./pages/Quests";
+import Quiz from "./pages/Quiz";
 import Leaderboard from "./pages/Leaderboard";
 import Community from "./pages/Community";
 import Admin from "./pages/Admin";
@@ -65,6 +66,11 @@ const App = () => (
           <Route path="/quests" element={
             <ProtectedRoute>
               <Quests />
+            </ProtectedRoute>
+          } />
+          <Route path="/quiz" element={
+            <ProtectedRoute>
+              <Quiz />
             </ProtectedRoute>
           } />
           <Route path="/leaderboard" element={

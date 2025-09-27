@@ -23,13 +23,15 @@ import {
   Leaf,
   Award,
   Menu,
-  X
+  X,
+  Brain
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { path: "/", label: "Dashboard", icon: Home },
   { path: "/quests", label: "Quests", icon: Map },
+  { path: "/quiz", label: "Quiz", icon: Brain },
   { path: "/leaderboard", label: "Leaderboard", icon: Trophy },
   { path: "/community", label: "Community", icon: Users },
 ];
