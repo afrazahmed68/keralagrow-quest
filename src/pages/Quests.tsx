@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -34,6 +35,7 @@ const categoryColors = {
 export default function Quests() {
   const { user } = useAuthStore();
   const { quests, getActiveQuests, getAvailableQuests, startQuest, updateQuestProgress } = useQuestStore();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
@@ -258,11 +260,11 @@ export default function Quests() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <QuestCard
-                      quest={quest}
-                      onStart={() => handleStartQuest(quest.id)}
-                      showProgress={false}
-                    />
+                      <QuestCard
+                        quest={quest}
+                        onStart={() => navigate(`/quests/${quest.id}`)}
+                        showProgress={false}
+                      />
                   </motion.div>
                 ))}
               </div>
